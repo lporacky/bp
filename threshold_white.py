@@ -2,12 +2,15 @@ import cv2 as cv
 from data.color_data import *
 from functions import *
 from data.rois import *
+from collections import Counter
+
+
+
 
 
 def threshold_white(image):
     box_count = 0
-
-    # image = image[100:-100, 100:-100]
+    real_comb = []
     image_hsv=cv.cvtColor(image, cv.COLOR_BGR2HSV)
     white_mask=cv.inRange(image_hsv, lower_white, upper_white)
 
@@ -16,29 +19,45 @@ def threshold_white(image):
 
     contours, _ = cv.findContours(morph, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
 
+    # SPOCITANIE KRABIC
     for contour in contours:
         area = cv.contourArea(contour)
         if min_area < area:
             box_count += 1
 
 
-
+    # VYKRESLENIE NAJDENYCH KONTUR
     # box_index = 0
     # for contour in contours:
     #     area = cv.contourArea(contour)
     #     if min_area < area:
     #         box_index += 1
     #         draw_countour(image, image_hsv, contour, box_index)
+    # while True:
+    #     if cv.waitKey(0) == ord('x'):
+    #         break
+    # cv.destroyAllWindows()
+
     if box_count == 6:
         for i, (xr, yr, wr, hr) in enumerate(giant_boxes):
+            # ZISKANIE FARBY CUMLIKA
+            hsv_roi = get_rectangle_roi(image, image_hsv, i + 1, xr, yr, wr, hr)
+            dominant_color = get_dominant_color(hsv_roi)
+            print(dominant_color)
+            real_comb.append(dominant_color[0])
 
-            draw_rectangle_roi(image, image_hsv, i + 1, xr, yr, wr, hr)
+        # VYKRESLENIE 6 ROI NA POZICIACH JEDNOTLIVYCH KRABIC
+        #     draw_rectangle_roi(image, image_hsv, i + 1, xr, yr, wr, hr)
+        # while True:
+        #     if cv.waitKey(0) == ord('x'):
+        #         break
+        # cv.destroyAllWindows()
 
-        while True:
-            if cv.waitKey(0) == ord('x'):
-                break
-        cv.destroyAllWindows()
-        print("OK")
+        if Counter(comb1) == Counter(real_comb) or Counter(comb2) == Counter(real_comb):
+            print("OK")
+        else:
+            print("NOK")
+
     else:
         print("NOK")
 
@@ -46,9 +65,3 @@ def threshold_white(image):
 
     # print(box_count)
     return box_count
-
-
-# image = cv.imread(r"C:\Users\plibo\Desktop\BP\just_try\6\snimok_20250529_084553.jpg")
-# image = cv.imread(r"C:\Users\plibo\Desktop\BP\vzorky\kamera\light_5\snimok_20250529_091627.jpg")
-# image = cv.imread(r"C:\Users\plibo\Desktop\BP\vzorky\kamera\light_6\snimok_20250529_085220.jpg")
-# threshold_white(image)

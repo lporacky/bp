@@ -46,9 +46,9 @@ def get_input():
 
 
 def get_dominant_color(image):
-    dominant_color = color_data.hsv_limits_doma[0]
+    dominant_color = color_data.hsv_limits_lab[0]
     dom_pixels = 0
-    for color in color_data.hsv_limits_doma:
+    for color in color_data.hsv_limits_lab:
         pixel_count = count_pixels(color[1], color[2], image)
         if dom_pixels < pixel_count:
             dom_pixels = pixel_count
