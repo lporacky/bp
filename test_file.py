@@ -9,15 +9,15 @@ def try_directory(folder_path):
             image = cv.imread(file_path)
             result = threshold_white(image)
 
-            if result == 6:
-                print(f"{filename}: OK")
-
-            else:
-                print(f"{filename}: NOK")
+            # if result == 6:
+            #     print(f"{filename}: OK")
+            #
+            # else:
+            #     print(f"{filename}: NOK")
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Použitie: try_many.exe <cesta_k_priecinku>")
+        print("Použitie: test_file.exe <cesta_k_priecinku>")
     else:
         folder_path = sys.argv[1]
         try_directory(folder_path)
