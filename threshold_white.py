@@ -48,7 +48,7 @@ def threshold_white(image):
     return box_count
 
 
-image = cv.imread(r"C:\Users\plibo\Desktop\BP\vzorky\kamera\light_6\snimok_20250529_084749.jpg")
+# image = cv.imread(r"C:\Users\plibo\Desktop\BP\just_try\6\snimok_20250529_084553.jpg")
 # image = cv.imread(r"C:\Users\plibo\Desktop\BP\vzorky\kamera\light_5\snimok_20250529_091627.jpg")
 # image = cv.imread(r"C:\Users\plibo\Desktop\BP\vzorky\kamera\light_6\snimok_20250529_085220.jpg")
-threshold_white(image)
+# threshold_white(image)

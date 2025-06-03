@@ -75,9 +75,9 @@ def find_hsv_range(image):
     cv2.destroyAllWindows()
 
 
-image1 = cv2.imread(r"C:\Users\plibo\Desktop\BP\vzorky\kamera\light_6\snimok_20250529_085416.jpg")
+image1 = cv2.imread(r"C:\Users\plibo\Desktop\BP\just_try\6\snimok_20250529_085006.jpg")
 image2 = cv2.imread(r"C:\Users\plibo\Desktop\BP\vzorky\kamera\light_6\snimok_20250529_084553.jpg")
 image3 = cv2.imread(r"C:\Users\plibo\Desktop\BP\vzorky\kamera\6\snimok_20250507_135130.jpg")
 image4 = cv2.imread(r"C:\Users\plibo\Desktop\BP\vzorky\kamera\light_6\snimok_20250529_084912.jpg")
 image5 = cv2.imread(r"C:\Users\plibo\Desktop\BP\vzorky\kamera\6\snimok_20250529_084553.jpg")
-find_hsv_range(image5)
+find_hsv_range(image1)

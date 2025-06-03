@@ -23,8 +23,3 @@ def count_white_in_roi(image):
 
     print(box_count)
     return box_count
-
-
-# image = cv.imread(r"C:\Users\plibo\Desktop\BP\vzorky\kamera\light_6\snimok_20250529_084749.jpg")
-image = cv.imread(r"C:\Users\plibo\Desktop\BP\vzorky\kamera\5\snimok_20250529_091152.jpg")
-count_white_in_roi(image)
