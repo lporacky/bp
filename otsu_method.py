@@ -13,5 +13,5 @@ def otsu(image):
         if min_area < area:
             box_count += 1
 
-    # print(box_count)
+    print(box_count)
     return box_count

@@ -1,0 +1,4 @@
+opencv-python>=4.8.0
+numpy>=1.26.0
+ximea-py>=4.25.0  # dostupné cez XIMEA SDK pre Python
+pyinstaller>=5.13.0  # voliteľné pre tvorbu .exe

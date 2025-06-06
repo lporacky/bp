@@ -2,8 +2,9 @@ import os
 from count_white_in_roi import count_white_in_roi
 from otsu_method import *
 from threshold_white import *
-# folder_path = 'C:/Users\plibo/Desktop/bp_try/images/NOK/'
-# folder_path = 'C:/Users\plibo/Desktop/bp_try/images/OK/'
+
+
+
 
 def try_directory(folder_path):
     for filename in os.listdir(folder_path):
@@ -13,5 +14,4 @@ def try_directory(folder_path):
             result = threshold_white(image)
             # result = otsu(image)
             # result = count_white_in_roi(image)
-
-# try_directory(folder_path)
+            print(result)

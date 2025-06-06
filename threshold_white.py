@@ -38,6 +38,7 @@ def threshold_white(image):
     #         break
     # cv.destroyAllWindows()
 
+    print(box_count)
     if box_count == 6:
         for i, (xr, yr, wr, hr) in enumerate(giant_boxes):
             # ZISKANIE FARBY CUMLIKA

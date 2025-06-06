@@ -9,11 +9,6 @@ def try_directory(folder_path):
             image = cv.imread(file_path)
             result = threshold_white(image)
 
-            # if result == 6:
-            #     print(f"{filename}: OK")
-            #
-            # else:
-            #     print(f"{filename}: NOK")
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
