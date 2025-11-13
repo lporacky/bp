@@ -44,7 +44,7 @@ def threshold_white(image):
             # ZISKANIE FARBY CUMLIKA
             hsv_roi = get_rectangle_roi(image, image_hsv, i + 1, xr, yr, wr, hr)
             dominant_color = get_dominant_color(hsv_roi)
-            print(dominant_color)
+            # print(dominant_color)
             real_comb.append(dominant_color[0])
 
         # VYKRESLENIE 6 ROI NA POZICIACH JEDNOTLIVYCH KRABIC

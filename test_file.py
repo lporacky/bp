@@ -16,3 +16,5 @@ if __name__ == "__main__":
     else:
         folder_path = sys.argv[1]
         try_directory(folder_path)
+
+print(os.cpu_count())
